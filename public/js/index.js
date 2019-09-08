@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			darkMode = false;
 			document.cookie = "dark= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 			darkModeStyles.innerHTML = "";
-			darkModeButton.textContent = "Dark Mode";
+			darkModeButton.textContent = "🌞";
 		} else {
 			darkMode = true;
 			document.cookie = "dark=true";
@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
                background-color: #292929;
                color: white;
             }
-            header a, section#work div.project {
+            header a, footer a, section#work div.project {
                color: white;
             }
             path {
@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
 					color: #231f1f;
 				}
 			`;
-			darkModeButton.textContent = "Light Mode";
+			darkModeButton.textContent = "🌚";
 		}
 	}
 

@@ -68,7 +68,6 @@
 /** GLOBAL  */
 
 body {
-	font-size: 10px;
 	font-family: "Noto Sans JP", Roboto, Arial, Helvetica, sans-serif;
 	font-weight: 400;
 	letter-spacing: 2px;
@@ -95,6 +94,7 @@ header {
 	font-size: 1rem;
 	display: grid;
 	grid-template-columns: auto 135px 135px 135px;
+	align-items: center;
 	padding: 5vh 2vw 0;
 }
 
@@ -108,6 +108,7 @@ header a.second {
 	grid-column-end: 4;
 }
 header span.mode-toggle {
+	font-size: 2em;
 	grid-column-start: 4;
 	grid-column-end: 5;
 }
@@ -115,7 +116,7 @@ header span.mode-toggle {
 header a {
 	transition: color 0.1s linear;
 	text-decoration: none;
-	color: #979797;
+	color: #666666;
 	letter-spacing: 3px;
 	padding-bottom: 10px;
 	width: fit-content;
@@ -235,7 +236,7 @@ section#skills div.skills-grid h2 {
 
 section#skills div.skills-subgrid {
 	display: grid;
-	max-width: 80%;
+	max-width: 750px;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	margin-top: 6vh;
 }
@@ -342,4 +343,77 @@ section#work div.project-details {
 
 section#work div.project-container:hover div.project-details {
 	display: block;
+}
+
+/** Footer  */
+footer {
+	display: flexbox;
+	font-size: 1rem;
+}
+
+footer a {
+	margin: 0 30px;
+	padding-bottom: 5vh;
+	transition: color 0.1s linear;
+	text-decoration: none;
+	color: #666666;
+	letter-spacing: 3px;
+	width: fit-content;
+}
+
+footer a:focus,
+footer a:hover {
+	color: #00e8ac;
+	cursor: pointer;
+}
+
+footer a:focus {
+	outline: none;
+	border-bottom: 1px solid #00e8ac;
+}
+
+/** TABLET STYLES */
+@media (max-width: 740px) {
+	html {
+		font-size: 90%;
+	}
+	body {
+		font-size: 8px;
+	}
+
+	#face {
+		width: 150px;
+	}
+
+	section#skills div.skills-subgrid h3 {
+		padding-right: 20px;
+	}
+
+	section#skills div.skills-subgrid ul {
+		padding-right: 20px;
+	}
+
+	section#work div.project-details {
+		transform: translate(30vw, -20vh);
+	}
+}
+
+@media (max-width: 580px) {
+	section#work div.work-grid {
+		align-self: center;
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+
+	section#work div#work-animation,
+	section#skills div#skills-animation {
+		display: none;
+	}
+
+	section#work div.project span.title {
+		font-size: 2.5rem;
+	}
+	section#work div.project span.date {
+		font-size: 1rem;
+	}
 }

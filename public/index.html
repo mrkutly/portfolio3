@@ -11,7 +11,7 @@
 						background-color: #292929;
 						color: white;
 					}
-					header a, section#work div.project {
+					header a, footer a, section#work div.project {
 						color: white;
 					}
 					path {
@@ -22,6 +22,8 @@
 						color: #231f1f;
 					}
 				`;
+				
+				window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚")
 			}
 		</script>
 		<script
@@ -54,7 +56,7 @@
 			</a>
 			<a>
 				<span class="mode-toggle">
-					Dark Mode
+					🌞
 				</span>
 			</a>
 		</header>
@@ -179,6 +181,28 @@
 				<div id="work-animation"></div>
 			</section>
 		</main>
-		<footer></footer>
+		<footer>
+			<a href="https://www.github.com/mrkutly" rel="noopener" target="_blank" class="first">
+				<span>
+					Github
+				</span>
+			</a>
+			<a href="https://www.linkedin.com/in/mark-sauer-utley/" rel="noopener" target="_blank" class="first">
+				<span>
+					LinkedIn
+				</span>
+			</a>
+			<a href="https://medium.com/@mark.utley.713" rel="noopener" target="_blank" class="first">
+				<span>
+					Medium
+				</span>
+			</a>
+			<a href="/contact" rel="noopener" class="second">
+				<span>
+					Contact
+				</span>
+			</a>
+			
+		</footer>
 	</body>
 </html>
