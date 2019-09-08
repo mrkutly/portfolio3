@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="icon" href="/static/favicon.png" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.8/lottie.min.js"
+			integrity="sha256-QWuFU4W0oiKnJa3GVz5Z+pNf91eTYdmHogcIeJpWON0="
+			crossorigin="anonymous"
+		></script>
+		<script src="contact.js"></script>
+		<style id="dark"></style>
+		<script type="text/javascript">
+			if (document.cookie === "dark=true") {
+				document.querySelector("style#dark").innerHTML = `
+							body {
+								background-color: #292929;
+								color: white;
+							}
+							header a {
+								color: white;
+							}
+							path {
+								fill: rgb(255, 255, 255);
+								stroke: rgb(255, 255, 255);
+							} 
+						`;
+			}
+		</script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>mark sauer-utley | contact</title>
+	</head>
+	<body>
+		<header>
+			<a href="/" rel="noopener" class="second">
+				<span>
+					Back
+				</span>
+			</a>
+			<a>
+				<span class="mode-toggle">
+					Dark Mode
+				</span>
+			</a>
+		</header>
+		<div id="face"></div>
+		<main class="contact">
+			<div>
+				<p id="email" tabIndex="0">
+					mark.sauer.utley@gmail.com
+				</p>
+
+				<div class="contact-message">
+					<p>
+						i know we all hate these "mailto" links that open the mail app.
+					</p>
+					<p>just click my email to copy it to your clipboard.</p>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
+</html>

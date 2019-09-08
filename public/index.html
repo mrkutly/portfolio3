@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="icon" href="/static/favicon.png" />
+		<style id="dark"></style>
+		<script type="text/javascript">
+			if (document.cookie === "dark=true") {
+				document.querySelector("style#dark").innerHTML = `
+					body {
+						background-color: #292929;
+						color: white;
+					}
+					header a, section#work div.project {
+						color: white;
+					}
+					path {
+						fill: rgb(255, 255, 255);
+						stroke: rgb(255, 255, 255);
+					} 
+					div.project-details {
+						color: #231f1f;
+					}
+				`;
+			}
+		</script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.8/lottie.min.js"
+			integrity="sha256-QWuFU4W0oiKnJa3GVz5Z+pNf91eTYdmHogcIeJpWON0="
+			crossorigin="anonymous"
+		></script>
+		<script src="index.js"></script>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>mark sauer-utley</title>
+	</head>
+	<body>
+		<header>
+			<a
+				href="https://www.github.com/mrkutly"
+				rel="noopener"
+				target="_blank"
+				class="first"
+			>
+				<span>
+					Github
+				</span>
+			</a>
+			<a href="/contact" rel="noopener" class="second">
+				<span>
+					Contact
+				</span>
+			</a>
+			<a>
+				<span class="mode-toggle">
+					Dark Mode
+				</span>
+			</a>
+		</header>
+		<div id="face"></div>
+		<main>
+			<section id="intro">
+				<p>
+					I’m Mark Sauer-Utley. I'm a full-stack developer from Brooklyn, NY,
+					specializing in Javascript.
+				</p>
+				<p>
+					I spend most of my days building custom UI's for major publisher websites
+					in the US, like <span class="color">CNBC</span class="color">, <span class="color">ESPN</span class="color">,
+					<span class="color">ABC News</span class="color">, <span class="color">USA Today</span class="color">, and
+					<span class="color">AP News</span class="color">.
+				</p>
+				<p>Want to work together or chat about a project?</p>
+			</section>
+			<section id="skills" tabindex="0">				
+				<div id="skills-animation"></div>
+				<div class="skills-grid">
+					<h2 class="reveal">
+						Skills &amp; Interests</h2>
+					<div class="reveal">
+						<div class="skills-subgrid">
+							<h3>FRONT END</h3>
+							<ul>
+								<li>react.js</li>
+								<li>next.js</li>
+							</ul>
+							<ul>
+								<li>styled-components</li>
+								<li>apollo client</li>
+							</ul>
+							<ul>
+								<li>javascript</li>
+								<li>css</li>
+								<li>html/xml</li>
+							</ul>
+						</div>
+					</div>
+					<div class="reveal">
+						<div class="skills-subgrid">
+							<h3>BACK END</h3>
+							<ul>
+								<li>express</li>
+								<li>ruby on rails</li>
+								<li>graphql</li>
+							</ul>
+							<ul>
+								<li>mongo db</li>
+								<li>mysql</li>
+							</ul>
+							<ul>
+								<li>heroku</li>
+								<li>now.sh</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="work" tabindex="0">
+				<div class="work-grid">
+					<div class="project-container">
+						<div class="project-details">
+							<p>
+								A custom feed of Taboola ads and CNBC Make It content. Built with vanilla JS for CSS for UI, and XML for a custom
+								recommendation algorithm ranker.
+							</p>
+						</div>
+						<a href="https://www.cnbc.com/2019/07/12/flexjobs-15-of-the-most-common-flexible-side-jobs.html#taboolaContainerMix">
+							<div class="project reveal">
+								<span class="date">04.2019</span>
+								<span class="title">CNBC</span>
+							</div>
+						</a>
+					</div>
+					<div class="project-container">
+						<div class="project-details">
+							<p>
+								Website for my band, Mantra Percussion. Built with Gatsby and styled-components. Hosted on Heroku.
+							</p>
+						</div>
+						<a href="https://mantra-percussion.herokuapp.com">
+							<div class="project reveal">
+								<span class="date">02.2019</span>
+								<span class="title">Mantra Percussion</span>
+							</div>
+						</a>
+					</div>	
+					<div class="project-container">
+						<div class="project-details">
+							<p>
+								A custom feed of Taboola ads and SYFY Wire content. Built with vanilla JS for CSS for UI, and X-Path
+								configurations for
+								a custom web-crawler.
+							</p>
+						</div>
+						<a href="https://www.syfy.com/syfywire/chosen-one-of-the-day-gamera-master-of-the-uneven-bars#taboola-below-article-thumbnails">
+							<div class="project reveal">
+								<span class="date">02.2019</span>
+								<span class="title">SYFY</span>
+							</div>
+						</a>
+					</div>
+					<div class="project-container">
+						<div class="project-details">
+							<p>
+								An example application to show Taboola clients best practice integrations of the Taboola React Native node
+								package.
+								Built with React Native and styled-compenents.
+							</p>
+						</div>
+						<a href="https://github.com/taboola/taboola-react-native-example/tree/master/full-example/TaboolaReactNativeExample">
+							<div class="project reveal">
+								<span class="date">03.2019</span>
+								<span class="title">Taboola React Native</span>
+							</div>
+						</a>
+					</div>	
+				</div>
+				<div id="work-animation"></div>
+			</section>
+		</main>
+		<footer></footer>
+	</body>
+</html>
