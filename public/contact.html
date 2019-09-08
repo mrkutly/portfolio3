@@ -8,23 +8,28 @@
 			integrity="sha256-QWuFU4W0oiKnJa3GVz5Z+pNf91eTYdmHogcIeJpWON0="
 			crossorigin="anonymous"
 		></script>
-		<script src="contact.js"></script>
+		<script src="js/contact.js"></script>
 		<style id="dark"></style>
 		<script type="text/javascript">
 			if (document.cookie === "dark=true") {
 				document.querySelector("style#dark").innerHTML = `
-							body {
-								background-color: #292929;
-								color: white;
-							}
-							header a {
-								color: white;
-							}
-							path {
-								fill: rgb(255, 255, 255);
-								stroke: rgb(255, 255, 255);
-							} 
-						`;
+					body {
+						background-color: #292929;
+						color: white;
+					}
+					header a {
+						color: white;
+					}
+					path {
+						fill: rgb(255, 255, 255);
+						stroke: rgb(255, 255, 255);
+					} 
+				`;
+
+				window.addEventListener(
+					"DOMContentLoaded",
+					() => (document.querySelector(".mode-toggle").textContent = "🌚")
+				);
 			}
 		</script>
 		<meta charset="UTF-8" />
@@ -41,7 +46,7 @@
 			</a>
 			<a>
 				<span class="mode-toggle">
-					Dark Mode
+					🌞
 				</span>
 			</a>
 		</header>

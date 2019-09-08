@@ -70,10 +70,12 @@ window.addEventListener("DOMContentLoaded", () => {
 		if (darkMode) {
 			darkMode = false;
 			document.cookie = "dark= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+			darkModeButton.textContent = "🌞";
 			darkModeStyles.innerHTML = "";
 		} else {
 			darkMode = true;
 			document.cookie = "dark=true";
+			darkModeButton.textContent = "🌚";
 			darkModeStyles.innerHTML = `
             body {
                background-color: #292929;
