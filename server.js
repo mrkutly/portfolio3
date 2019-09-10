@@ -24,7 +24,7 @@ function route(req) {
 			type = "text/css";
 			break;
 
-		case "/index.js":
+		case "/js/index.js":
 			resData = fs.readFileSync("public/js/index.js");
 			type = "text/javascript";
 			break;
@@ -34,71 +34,80 @@ function route(req) {
 			type = "text/html";
 			break;
 
-		case "/contact.js":
+		case "/js/contact.js":
 			resData = fs.readFileSync("public/js/contact.js");
 			type = "text/javascript";
 			break;
 
-		case "/res/animations/face.json":
-			resData = fs.readFileSync("res/animations/face.json");
+		case "/public/res/animations/face.json":
+			resData = fs.readFileSync("public/res/animations/face.json");
 			type = "text";
 			break;
 
-		case "/res/animations/skills.json":
-			resData = fs.readFileSync("res/animations/skills.json");
+		case "/public/res/animations/skills.json":
+			resData = fs.readFileSync("public/res/animations/skills.json");
 			type = "text";
 			break;
 
-		case "/static/fonts/noto-sans-jp-v23-latin-regular.woff2":
+		case "/public/res/animations/work.json":
+			resData = fs.readFileSync("public/res/animations/work.json");
+			type = "text";
+			break;
+
+		case "/public/static/fonts/noto-sans-jp-v23-latin-regular.woff2":
 			resData = fs.readFileSync(
-				"static/fonts/noto-sans-jp-v23-latin-regular.woff2"
+				"public/static/fonts/noto-sans-jp-v23-latin-regular.woff2"
 			);
 			type = "font";
 			break;
 
-		case "/static/fonts/noto-sans-jp-v23-latin-regular.woff":
+		case "/public/static/fonts/noto-sans-jp-v23-latin-regular.woff":
 			resData = fs.readFileSync(
-				"static/fonts/noto-sans-jp-v23-latin-regular.woff"
+				"public/static/fonts/noto-sans-jp-v23-latin-regular.woff"
 			);
 			type = "font";
 			break;
 
-		case "/static/fonts/noto-sans-jp-v23-latin-500.woff2":
+		case "/public/static/fonts/noto-sans-jp-v23-latin-500.woff2":
 			resData = fs.readFileSync(
-				"static/fonts/noto-sans-jp-v23-latin-500.woff2"
+				"public/static/fonts/noto-sans-jp-v23-latin-500.woff2"
 			);
 			type = "font";
 			break;
 
-		case "/static/fonts/noto-sans-jp-v23-latin-500.woff":
-			resData = fs.readFileSync("static/fonts/noto-sans-jp-v23-latin-500.woff");
-			type = "font";
-			break;
-
-		case "/static/fonts/noto-sans-jp-v23-latin-700.woff2":
+		case "/public/static/fonts/noto-sans-jp-v23-latin-500.woff":
 			resData = fs.readFileSync(
-				"static/fonts/noto-sans-jp-v23-latin-700.woff2"
+				"public/static/fonts/noto-sans-jp-v23-latin-500.woff"
 			);
 			type = "font";
 			break;
 
-		case "/static/fonts/noto-sans-jp-v23-latin-700.woff":
-			resData = fs.readFileSync("static/fonts/noto-sans-jp-v23-latin-700.woff");
+		case "/public/static/fonts/noto-sans-jp-v23-latin-700.woff2":
+			resData = fs.readFileSync(
+				"public/static/fonts/noto-sans-jp-v23-latin-700.woff2"
+			);
 			type = "font";
 			break;
 
-		case "/static/Circle.svg":
-			resData = fs.readFileSync("static/Circle.svg");
+		case "/public/static/fonts/noto-sans-jp-v23-latin-700.woff":
+			resData = fs.readFileSync(
+				"public/static/fonts/noto-sans-jp-v23-latin-700.woff"
+			);
+			type = "font";
+			break;
+
+		case "/public/static/Circle.svg":
+			resData = fs.readFileSync("public/static/Circle.svg");
 			type = "image/svg+xml";
 			break;
 
-		case "/static/Highlighter.svg":
-			resData = fs.readFileSync("static/Highlighter.svg");
+		case "/public/static/Highlighter.svg":
+			resData = fs.readFileSync("public/static/Highlighter.svg");
 			type = "image/svg+xml";
 			break;
 
-		case "/static/favicon.png":
-			resData = fs.readFileSync("static/favicon.png");
+		case "/public/static/favicon.png":
+			resData = fs.readFileSync("public/static/favicon.png");
 			type = "image/png";
 			break;
 

@@ -4,9 +4,9 @@
 	font-style: normal;
 	font-weight: 100;
 	src: local("Noto Sans Japanese Thin"), local("NotoSansJapanese-Thin"),
-		url("/static/fonts/noto-sans-jp-v23-latin-100.woff2") format("woff2"),
+		url("/public/static/fonts/noto-sans-jp-v23-latin-100.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-100.woff")
+			url("/public/static/fonts/noto-sans-jp-v23-latin-100.woff")
 			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -16,9 +16,9 @@
 	font-style: normal;
 	font-weight: 300;
 	src: local("Noto Sans Japanese Light"), local("NotoSansJapanese-Light"),
-		url("/static/fonts/noto-sans-jp-v23-latin-300.woff2") format("woff2"),
+		url("/public/static/fonts/noto-sans-jp-v23-latin-300.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-300.woff")
+			url("/public/static/fonts/noto-sans-jp-v23-latin-300.woff")
 			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -28,10 +28,10 @@
 	font-style: normal;
 	font-weight: 400;
 	src: local("Noto Sans Japanese Regular"), local("NotoSansJapanese-Regular"),
-		url("/static/fonts/noto-sans-jp-v23-latin-regular.woff2")
+		url("/public/static/fonts/noto-sans-jp-v23-latin-regular.woff2")
 			format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-regular.woff")
+			url("/public/static/fonts/noto-sans-jp-v23-latin-regular.woff")
 			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -41,9 +41,9 @@
 	font-style: normal;
 	font-weight: 500;
 	src: local("Noto Sans Japanese Medium"), local("NotoSansJapanese-Medium"),
-		url("/static/fonts/noto-sans-jp-v23-latin-500.woff2") format("woff2"),
+		url("/public/static/fonts/noto-sans-jp-v23-latin-500.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-500.woff")
+			url("/public/static/fonts/noto-sans-jp-v23-latin-500.woff")
 			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -53,9 +53,9 @@
 	font-style: normal;
 	font-weight: 700;
 	src: local("Noto Sans Japanese Bold"), local("NotoSansJapanese-Bold"),
-		url("/static/fonts/noto-sans-jp-v23-latin-700.woff2") format("woff2"),
+		url("/public/static/fonts/noto-sans-jp-v23-latin-700.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-700.woff")
+			url("/public/static/fonts/noto-sans-jp-v23-latin-700.woff")
 			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -65,9 +65,9 @@
 	font-display: fallback;
 	font-weight: 900;
 	src: local("Noto Sans Japanese Black"), local("NotoSansJapanese-Black"),
-		url("/static/fonts/noto-sans-jp-v23-latin-900.woff2") format("woff2"),
+		url("/public/static/fonts/noto-sans-jp-v23-latin-900.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-900.woff")
+			url("/public/static/fonts/noto-sans-jp-v23-latin-900.woff")
 			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -144,19 +144,20 @@ header a:focus {
 	position: sticky;
 	width: 200px;
 	top: 30px;
-	margin-top: -60px;
-	margin-left: 2vw;
-	background-image: url(/static/Circle.svg);
+	margin-top: -75px;
+	margin-left: 3vw;
+	background-image: url(/public/static/Circle.svg);
 	background-size: 0%;
 	background-position-x: 50%;
 	background-position-y: 50%;
 	border-radius: 50%;
 	background-repeat: no-repeat;
-	transition: background-size 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+	transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
 }
 
 #face.stuck {
 	background-size: 100%;
+	width: 150px;
 }
 
 /** CONTACT PAGE  */
@@ -221,6 +222,11 @@ section#skills {
 	grid-template-columns: 0.88fr 2fr;
 	margin-bottom: 80vh;
 	font-size: 1rem;
+}
+
+div#skills-animation,
+div#work-animation {
+	opacity: 0.5;
 }
 
 div#skills-animation {
@@ -294,6 +300,10 @@ section#work div#work-animation {
 	transform: translateX(5vw);
 }
 
+section#work div#work-animation g g g:first-of-type {
+	display: none;
+}
+
 section#work div.work-grid {
 	align-self: center;
 	grid-column-start: 2;
@@ -323,7 +333,7 @@ section#work div.project span.title {
 	text-decoration: none;
 	font-size: 3rem;
 	margin-left: 30px;
-	background-image: url(/static/Highlighter.svg);
+	background-image: url(/public/static/Highlighter.svg);
 	background-repeat: repeat-x;
 	background-position-y: 5rem;
 	background-size: auto auto;

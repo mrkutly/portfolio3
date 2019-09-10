@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	if (lottie) {
 		const animationOptions = {
 			container: face,
-			path: "/res/animations/face.json",
+			path: "public/res/animations/face.json",
 			loop: true,
 			renderer: "svg",
 			autoplay: true,
@@ -81,7 +81,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				if (entry.isIntersecting && lottie) {
 					const animationOptions = {
 						container: skillsAnimation,
-						path: "/res/animations/skills.json",
+						path: "/public/res/animations/skills.json",
 						loop: false,
 						renderer: "svg",
 						autoplay: true,
@@ -95,7 +95,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				if (entry.isIntersecting && lottie) {
 					const animationOptions = {
 						container: workAnimation,
-						path: "/res/animations/skills.json",
+						path: "/public/res/animations/work.json",
 						loop: false,
 						renderer: "svg",
 						autoplay: true,
