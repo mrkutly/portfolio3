@@ -4,10 +4,9 @@
 	font-style: normal;
 	font-weight: 100;
 	src: local("Noto Sans Japanese Thin"), local("NotoSansJapanese-Thin"),
-		url("/public/static/fonts/noto-sans-jp-v23-latin-100.woff2") format("woff2"),
+		url("/static/fonts/noto-sans-jp-v23-latin-100.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/public/static/fonts/noto-sans-jp-v23-latin-100.woff")
-			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			url("/static/fonts/noto-sans-jp-v23-latin-100.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -16,10 +15,9 @@
 	font-style: normal;
 	font-weight: 300;
 	src: local("Noto Sans Japanese Light"), local("NotoSansJapanese-Light"),
-		url("/public/static/fonts/noto-sans-jp-v23-latin-300.woff2") format("woff2"),
+		url("/static/fonts/noto-sans-jp-v23-latin-300.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/public/static/fonts/noto-sans-jp-v23-latin-300.woff")
-			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			url("/static/fonts/noto-sans-jp-v23-latin-300.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -28,10 +26,9 @@
 	font-style: normal;
 	font-weight: 400;
 	src: local("Noto Sans Japanese Regular"), local("NotoSansJapanese-Regular"),
-		url("/public/static/fonts/noto-sans-jp-v23-latin-regular.woff2")
-			format("woff2"),
+		url("/static/fonts/noto-sans-jp-v23-latin-regular.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/public/static/fonts/noto-sans-jp-v23-latin-regular.woff")
+			url("/static/fonts/noto-sans-jp-v23-latin-regular.woff")
 			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
@@ -41,10 +38,9 @@
 	font-style: normal;
 	font-weight: 500;
 	src: local("Noto Sans Japanese Medium"), local("NotoSansJapanese-Medium"),
-		url("/public/static/fonts/noto-sans-jp-v23-latin-500.woff2") format("woff2"),
+		url("/static/fonts/noto-sans-jp-v23-latin-500.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/public/static/fonts/noto-sans-jp-v23-latin-500.woff")
-			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			url("/static/fonts/noto-sans-jp-v23-latin-500.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -53,10 +49,9 @@
 	font-style: normal;
 	font-weight: 700;
 	src: local("Noto Sans Japanese Bold"), local("NotoSansJapanese-Bold"),
-		url("/public/static/fonts/noto-sans-jp-v23-latin-700.woff2") format("woff2"),
+		url("/static/fonts/noto-sans-jp-v23-latin-700.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/public/static/fonts/noto-sans-jp-v23-latin-700.woff")
-			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			url("/static/fonts/noto-sans-jp-v23-latin-700.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -65,10 +60,9 @@
 	font-display: fallback;
 	font-weight: 900;
 	src: local("Noto Sans Japanese Black"), local("NotoSansJapanese-Black"),
-		url("/public/static/fonts/noto-sans-jp-v23-latin-900.woff2") format("woff2"),
+		url("/static/fonts/noto-sans-jp-v23-latin-900.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/public/static/fonts/noto-sans-jp-v23-latin-900.woff")
-			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			url("/static/fonts/noto-sans-jp-v23-latin-900.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /** GLOBAL  */
@@ -85,7 +79,7 @@ body {
 
 .reveal {
 	opacity: 0;
-	transform: translateY(20vh) skewX(-30deg);
+	transform: translateY(20vh) skewX(-15deg);
 	transition: all 1s ease-out;
 }
 
@@ -134,23 +128,25 @@ header a:hover {
 	cursor: pointer;
 }
 
-header a:focus {
+header a:focus,
+header .mode-toggle:focus {
 	outline: none;
 	border-bottom: 1px solid #00e8ac;
 }
 
 #face {
 	z-index: 2;
+	position: -webkit-sticky;
 	position: sticky;
 	width: 200px;
-	top: 30px;
-	margin-top: -75px;
-	margin-left: 3vw;
-	background-image: url(/public/static/Circle.svg);
+	top: 0;
+	height: 206px;
+	margin-top: calc(-10vh + -1rem + -8px);
+	margin-left: 34px;
+	background-image: url(/static/Circle.svg);
 	background-size: 0%;
 	background-position-x: 50%;
 	background-position-y: 50%;
-	border-radius: 50%;
 	background-repeat: no-repeat;
 	transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
 }
@@ -307,6 +303,7 @@ section#work div#work-animation g g g:first-of-type {
 section#work div.work-grid {
 	align-self: center;
 	grid-column-start: 2;
+	grid-row-start: 1;
 	min-width: 630px;
 }
 
@@ -333,23 +330,25 @@ section#work div.project span.title {
 	text-decoration: none;
 	font-size: 3rem;
 	margin-left: 30px;
-	background-image: url(/public/static/Highlighter.svg);
+	background-image: url(/static/Highlighter.svg);
 	background-repeat: repeat-x;
 	background-position-y: 5rem;
 	background-size: auto auto;
 	transition: background-position-y 0.2s ease;
 }
 
-section#work div.project-container:hover span.title {
+section#work div.project-container:hover span.title,
+section#work div.project-container:focus span.title {
 	background-position-y: 2.5rem;
 }
 
 section#work div.project-details {
+	color: #231f1f;
 	font-size: 1rem;
 	display: none;
 	position: absolute;
 	z-index: 1;
-	transform: translate(20vw, -20vh);
+	transform: translate(16rem, 0.3rem);
 	border-radius: 1%;
 	background-color: #00e8ac;
 	width: 400px;
@@ -357,19 +356,24 @@ section#work div.project-details {
 	padding: 10px;
 }
 
-section#work div.project-container:hover div.project-details {
+section#work div.project-container:hover div.project-details,
+section#work div.project-container:focus div.project-details {
 	display: block;
+}
+
+.ad-message {
+	font-weight: 600;
 }
 
 /** Footer  */
 footer {
 	display: flexbox;
 	font-size: 1rem;
+	padding-bottom: 5vh;
 }
 
 footer a {
 	margin: 0 30px;
-	padding-bottom: 5vh;
 	transition: color 0.1s linear;
 	text-decoration: none;
 	color: #666666;
@@ -414,7 +418,8 @@ footer a:focus {
 	}
 }
 
-@media (max-width: 580px) {
+/* TABLET */
+/* @media (max-width: 600px) {
 	section#work div.work-grid {
 		align-self: center;
 		grid-column-start: 1;
@@ -429,7 +434,170 @@ footer a:focus {
 	section#work div.project span.title {
 		font-size: 2.5rem;
 	}
+
 	section#work div.project span.date {
 		font-size: 1rem;
+	}
+
+	
+} */
+
+/* MOBILE */
+@media (max-width: 600px) {
+	html {
+		font-size: 72%;
+	}
+
+	header {
+		justify-items: start;
+	}
+
+	#face {
+		width: 100px;
+		top: 15px;
+		height: 100px;
+		margin-bottom: 2rem;
+		margin-top: -6rem;
+	}
+
+	#face.stuck {
+		background-size: 80%;
+		height: 88px;
+		width: 100px;
+	}
+
+	section#work div#work-animation,
+	section#skills div#skills-animation {
+		transform: rotate(-85deg);
+		height: 90vw;
+	}
+
+	section#intro {
+		margin: 0 2rem;
+	}
+
+	section#skills {
+		display: block;
+		margin: 7rem 2rem 0;
+	}
+
+	section#skills div.skills-grid div.reveal:first-of-type {
+		float: left;
+		margin-right: 20vw;
+	}
+
+	section#skills div.skills-subgrid {
+		display: inline-block;
+	}
+
+	section#work {
+		display: block;
+		margin: 7rem 2rem 20rem;
+	}
+
+	section#work div.work-grid {
+		display: inline;
+	}
+
+	section#work div.project span.date {
+		display: block;
+	}
+
+	section#work div.project span.title {
+		margin-left: 0;
+	}
+
+	section#work div.project-details {
+		display: block;
+		position: static;
+		width: fit-content;
+	}
+
+	.reveal {
+		transform: translateY(20vh) skewX(0deg);
+	}
+
+	section#work div.project-details.reveal {
+		opacity: 0;
+		transform: translateY(20vh) skewX(0);
+		transition: all 1s ease-out;
+	}
+
+	section#work div.project-details.reveal.revealed {
+		opacity: 1;
+		transform: translateY(0px) skewX(0deg);
+	}
+
+	footer {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	footer a {
+		margin: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	header a.first,
+	header a.second {
+		visibility: hidden;
+		margin-bottom: 2rem;
+		width: 150px;
+		top: 0;
+		height: 100px;
+		margin-top: -6rem;
+	}
+
+	section#skills {
+		font-size: 1.3rem;
+	}
+
+	section#skills div#skills-animation {
+		margin: 19vh 0;
+	}
+
+	section#skills div.skills-grid h2 {
+		display: none;
+	}
+
+	section#skills div.skills-subgrid ul {
+		margin: 0;
+	}
+	section#skills div.skills-subgrid ul li {
+		margin: 5px 0;
+	}
+
+	section#work div.project-details {
+		font-size: 1.25rem;
+	}
+
+	section#work div.project-container {
+		margin: 25vh 0;
+	}
+
+	main.contact {
+		margin: 2vh;
+	}
+
+	main.contact p#email {
+		font-size: 3rem;
+	}
+
+	main.contact p#email::selection {
+		background-color: transparent;
+		color: #00e8ac;
+	}
+
+	main.contact + footer {
+		display: none;
+	}
+
+	footer {
+		flex-wrap: wrap;
+	}
+
+	footer a {
+		margin: 0 20px 20px;
 	}
 }

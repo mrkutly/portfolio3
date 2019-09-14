@@ -8,7 +8,9 @@
 			integrity="sha256-QWuFU4W0oiKnJa3GVz5Z+pNf91eTYdmHogcIeJpWON0="
 			crossorigin="anonymous"
 		></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 		<script src="js/contact.js"></script>
+		<script src="/js/logMessage.js"></script>
 		<style id="dark"></style>
 		<script type="text/javascript">
 			if (document.cookie === "dark=true") {
@@ -24,12 +26,12 @@
 						fill: rgb(255, 255, 255);
 						stroke: rgb(255, 255, 255);
 					} 
-				`;
+				`
 
 				window.addEventListener(
 					"DOMContentLoaded",
 					() => (document.querySelector(".mode-toggle").textContent = "🌚")
-				);
+				)
 			}
 		</script>
 		<meta charset="UTF-8" />
@@ -45,15 +47,17 @@
 				</span>
 			</a>
 			<a>
-				<span class="mode-toggle">
+				<span class="mode-toggle" tabindex="0">
 					🌞
 				</span>
 			</a>
 		</header>
-		<div id="face"></div>
+		<a href="/" rel="noopener">
+			<div id="face"></div>
+		</a>
 		<main class="contact">
 			<div>
-				<p id="email" tabIndex="0">
+				<p id="email" tabIndex="0" data-clipboard-target="#email">
 					mark.sauer.utley@gmail.com
 				</p>
 

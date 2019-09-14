@@ -1,14 +1,16 @@
 window.addEventListener("DOMContentLoaded", () => {
-	const face = document.getElementById("face");
-	const email = document.getElementById("email");
-	const contactMessage = document.querySelector(".contact-message");
-	const darkModeButton = document.querySelector(".mode-toggle");
+	const clipboard = ClipboardJS && new ClipboardJS("#email")
+	const face = document.querySelector("#face")
+	const contactMessage = document.querySelector(".contact-message")
+	const darkModeButton = document.querySelector(".mode-toggle")
 
-	let darkModeStyles = document.querySelector("style#dark");
-	let darkMode = document.cookie === "dark=true";
+	let darkModeStyles = document.querySelector("style#dark")
+	let darkMode = document.cookie === "dark=true"
 
-	applyEventListener(darkModeButton, toggleDarkMode);
-	applyEventListener(email, copyToClipboard);
+	applyEventListener(darkModeButton, toggleDarkMode)
+
+	clipboard.on("success", () => showSuccessMessage(contactMessage))
+	clipboard.on("error", () => showFailureMessage(contactMessage))
 
 	if (lottie) {
 		const animationOptions = {
@@ -17,65 +19,41 @@ window.addEventListener("DOMContentLoaded", () => {
 			loop: true,
 			renderer: "svg",
 			autoplay: true,
-		};
-		window.anim = lottie.loadAnimation(animationOptions);
+		}
+		window.anim = lottie.loadAnimation(animationOptions)
 	}
 
 	function applyEventListener(element, cb) {
-		element.addEventListener("click", cb);
-		element.addEventListener("keypress", e => e.which === 13 && cb(e));
+		element.addEventListener("click", cb)
+		element.addEventListener("keypress", e => e.which === 13 && cb(e))
 	}
 
-	function copyToClipboard() {
-		navigator.permissions
-			.query({ name: "clipboard-write" })
-			.then(({ state }) => {
-				if (state === "granted") {
-					navigator.clipboard
-						.writeText("mark.sauer.utley@gmail.com")
-						.then(() => {
-							changeMessage(contactMessage);
-						});
-				} else {
-					copyWithoutPermissions();
-				}
-			})
-			.catch(e => {
-				copyWithoutPermissions();
-			});
-	}
-
-	function copyWithoutPermissions() {
-		const emailNode = document.querySelector("#email");
-		const selection = window.getSelection();
-		const range = document.createRange();
-
-		range.selectNodeContents(emailNode);
-		selection.removeAllRanges();
-		selection.addRange(range);
-		document.execCommand("copy");
-
-		changeMessage(contactMessage);
-	}
-
-	function changeMessage(messageElement) {
+	function showSuccessMessage(messageElement) {
 		messageElement.innerHTML = `
 			<p>
 				Great! It's copied to your clipboard. Feel free to send me that email :)
 			</p>
-		`;
+		`
+	}
+
+	function showFailureMessage(messageElement) {
+		messageElement.innerHTML = `
+			<p>
+				Hmm there seems to be a problem. You might have to copy and paste the old-fashioned way.
+			</p>
+		`
 	}
 
 	function toggleDarkMode() {
 		if (darkMode) {
-			darkMode = false;
-			document.cookie = "dark= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-			darkModeButton.textContent = "🌞";
-			darkModeStyles.innerHTML = "";
+			darkMode = false
+			document.cookie = "dark= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+			darkModeButton.textContent = "🌞"
+			darkModeStyles.innerHTML = ""
 		} else {
-			darkMode = true;
-			document.cookie = "dark=true";
-			darkModeButton.textContent = "🌚";
+			darkMode = true
+			document.cookie = "dark=true"
+			darkModeButton.textContent = "🌚"
 			darkModeStyles.innerHTML = `
             body {
                background-color: #292929;
@@ -88,7 +66,7 @@ window.addEventListener("DOMContentLoaded", () => {
                fill: rgb(255, 255, 255);
                stroke: rgb(255, 255, 255);
             } 
-         `;
+         `
 		}
 	}
-});
+})

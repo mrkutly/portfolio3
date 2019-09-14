@@ -18,7 +18,7 @@
 						fill: rgb(255, 255, 255);
 						stroke: rgb(255, 255, 255);
 					} 
-					div.project-details {
+					div.project-details reveal {
 						color: #231f1f;
 					}
 				`;
@@ -32,9 +32,13 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="/js/index.js"></script>
+		<script src="/js/logMessage.js"></script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="keywords"
+			content="Mark Sauer-Utley, Web Developer, javascript, react, node.js, next.js, express, mongoDB, mysql, styled-components, software engineer, front-end development, back-end development, ruby, ruby on rails, postgresql, heroku, git" />
+		<meta name="description" content="Portfolio for Brooklyn-based full-stack javascript developer Mark Sauer-Utley." />
 		<title>mark sauer-utley</title>
 	</head>
 	<body>
@@ -55,7 +59,7 @@
 				</span>
 			</a>
 			<a>
-				<span class="mode-toggle">
+				<span class="mode-toggle" tabindex="0">
 					🌞
 				</span>
 			</a>
@@ -119,90 +123,99 @@
 				</div>
 			</section>
 			<section id="work" tabindex="0">
+				<div id="work-animation"></div>
 				<div class="work-grid">
 					<div class="project-container">
-						<div class="project-details">
-							<p>
-								A custom feed of Taboola ads and CNBC Make It content. Built with vanilla JS for CSS for UI, and XML for a custom
-								recommendation algorithm ranker.
-							</p>
-						</div>
-						<a href="https://www.cnbc.com/2019/07/12/flexjobs-15-of-the-most-common-flexible-side-jobs.html#taboolaContainerMix">
+						<a target="_blank" rel="noopener" href="https://www.cnbc.com/2019/07/12/flexjobs-15-of-the-most-common-flexible-side-jobs.html#taboolaContainerMix">
 							<div class="project reveal">
 								<span class="date">04.2019</span>
 								<span class="title">CNBC</span>
 							</div>
 						</a>
-					</div>
-					<div class="project-container">
-						<div class="project-details">
+						<div class="project-details reveal">
 							<p>
-								Website for my band, Mantra Percussion. Built with Gatsby and styled-components. Hosted on Heroku.
+								A custom feed of Taboola ads and CNBC Make It content. Built with vanilla JS for CSS for UI, and XML for a custom
+								recommendation algorithm ranker.
+								<br />
+								<span class="ad-message">Please turn off your ad-blocker to see it 😊</span>
 							</p>
 						</div>
-						<a href="https://mantra-percussion.herokuapp.com">
+					</div>
+					<div class="project-container">
+						<a target="_blank" rel="noopener" href="https://mantra-percussion.herokuapp.com">
 							<div class="project reveal">
 								<span class="date">02.2019</span>
 								<span class="title">Mantra Percussion</span>
 							</div>
 						</a>
-					</div>	
-					<div class="project-container">
-						<div class="project-details">
+						<div class="project-details reveal">
 							<p>
-								A custom feed of Taboola ads and SYFY Wire content. Built with vanilla JS for CSS for UI, and X-Path
-								configurations for
-								a custom web-crawler.
+								Website for the NYC-based percussion band Mantra Percussion. Built with Gatsby and styled-components. Hosted on
+								Heroku.
 							</p>
 						</div>
-						<a href="https://www.syfy.com/syfywire/chosen-one-of-the-day-gamera-master-of-the-uneven-bars#taboola-below-article-thumbnails">
+					</div>	
+					<div class="project-container">
+						<a target="_blank" rel="noopener" href="https://www.syfy.com/syfywire/chosen-one-of-the-day-gamera-master-of-the-uneven-bars#taboola-below-article-thumbnails">
 							<div class="project reveal">
 								<span class="date">02.2019</span>
 								<span class="title">SYFY</span>
 							</div>
 						</a>
-					</div>
-					<div class="project-container">
-						<div class="project-details">
+						<div class="project-details reveal">
 							<p>
-								An example application to show Taboola clients best practice integrations of the Taboola React Native node
-								package.
-								Built with React Native and styled-compenents.
+								A custom feed of Taboola ads and SYFY Wire content. Built with vanilla JS and CSS for UI, and X-Path
+								configurations for
+								a custom web-crawler.
+								<br />
+								<span class="ad-message"> Please turn off your ad-blocker to see it 😊</span>
 							</p>
 						</div>
-						<a href="https://github.com/taboola/taboola-react-native-example/tree/master/full-example/TaboolaReactNativeExample">
+					</div>
+					<div class="project-container">
+						<a target="_blank" rel="noopener" href="https://github.com/taboola/taboola-react-native-example/tree/master/full-example/TaboolaReactNativeExample">
 							<div class="project reveal">
 								<span class="date">03.2019</span>
 								<span class="title">Taboola React Native</span>
 							</div>
 						</a>
+						<div class="project-details reveal">
+							<p>
+								An example application to show Taboola clients best practice integrations of the Taboola React Native node
+								package.
+								Built with React Native and styled-components.
+							</p>
+						</div>
 					</div>	
 				</div>
-				<div id="work-animation"></div>
 			</section>
 		</main>
 		<footer>
-			<a href="https://www.github.com/mrkutly" rel="noopener" target="_blank" class="first">
+			<a href="https://www.github.com/mrkutly" rel="noopener" target="_blank">
 				<span>
 					Github
 				</span>
 			</a>
-			<a href="https://www.linkedin.com/in/mark-sauer-utley/" rel="noopener" target="_blank" class="first">
+			<a href="https://www.linkedin.com/in/mark-sauer-utley/" rel="noopener" target="_blank">
 				<span>
 					LinkedIn
 				</span>
 			</a>
-			<a href="https://medium.com/@mark.utley.713" rel="noopener" target="_blank" class="first">
+			<a href="https://medium.com/@mark.utley.713" rel="noopener" target="_blank">
 				<span>
 					Medium
 				</span>
 			</a>
-			<a href="/contact.html" rel="noopener" class="second">
+			<a href="https://twitter.com/sour_utley" rel="noopener" target="_blank">
+				<span>
+					Twitter
+				</span>
+			</a>
+			<a href="/contact.html" rel="noopener">
 				<span>
 					Contact
 				</span>
 			</a>
-			
 		</footer>
 	</body>
 </html>
