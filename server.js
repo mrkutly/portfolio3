@@ -29,6 +29,11 @@ function route(req) {
 			type = "text/javascript";
 			break;
 
+		case "/js/logMessage.js":
+			resData = fs.readFileSync("public/js/logMessage.js");
+			type = "text/javascript";
+			break;
+
 		case "/contact":
 			resData = fs.readFileSync("public/contact.html");
 			type = "text/html";
