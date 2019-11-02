@@ -316,9 +316,9 @@ section#work div.project-container a {
 }
 
 section#work div.project {
-	/* display: flex;
+	display: flex;
 	align-items: baseline;
-	flex-wrap: nowrap; */
+	/* flex-wrap: nowrap; */
 	color: #231f1f;
 }
 
@@ -348,7 +348,7 @@ section#work div.project-details {
 	display: none;
 	position: absolute;
 	z-index: 1;
-	transform: translate(16rem, 0.3rem);
+	transform: translate(17rem, 0.3rem);
 	border-radius: 1%;
 	background-color: #00e8ac;
 	width: 400px;
@@ -497,6 +497,10 @@ footer a:focus {
 
 	section#work div.work-grid {
 		display: inline;
+	}
+
+	section#work div.project {
+		display: block;
 	}
 
 	section#work div.project span.date {

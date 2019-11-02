@@ -33,6 +33,11 @@ function route(req) {
 			resData = fs.readFileSync("public/js/logMessage.js");
 			type = "text/javascript";
 			break;
+		
+		case "/js/lottie.min.js":
+			resData = fs.readFileSync("public/js/lottie.min.js");
+			type = "text/javascript";
+			break;
 
 		case "/contact":
 			resData = fs.readFileSync("public/contact.html");
