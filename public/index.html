@@ -1,246 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" type="text/css" href="index.css" />
-		<link rel="icon" href="/static/favicon.png" />
-		<style id="dark"></style>
-		<script type="text/javascript">
-			if (document.cookie === "dark=true") {
-				document.querySelector("style#dark").innerHTML = `
-					body {
-						background-color: #292929;
-						color: white;
-					}
-					header a, footer a, section#work div.project {
-						color: white;
-					}
-					path {
-						fill: rgb(255, 255, 255);
-						stroke: rgb(255, 255, 255);
-					} 
-					div.project-details reveal {
-						color: #231f1f;
-					}
-				`;
-				
-				window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚")
+
+<head>
+	<link rel="stylesheet" type="text/css" href="index.css" />
+	<link rel="icon" href="/static/favicon.png" />
+	<style>
+		@media (prefers-reduced-motion: reduce) {
+			.reveal {
+				opacity: 1;
+				transform: translateY(0px) skewX(0deg);
 			}
-		</script>
-		<script src="/js/lottie.min.js"></script>
-		<script src="/js/index.js"></script>
-		<script src="/js/logMessage.js"></script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<meta name="keywords"
-			content="Mark Sauer-Utley, Web Developer, javascript, react, node.js, next.js, express, mongoDB, mysql, styled-components, software engineer, front-end development, back-end development, ruby, ruby on rails, postgresql, heroku, git" />
-		<meta name="description" content="Portfolio for Brooklyn-based full-stack javascript developer Mark Sauer-Utley." />
-		<title>mark sauer-utley</title>
-	</head>
-	<body>
-		<header>
-			<a
-				href="https://www.github.com/mrkutly"
-				rel="noopener"
-				target="_blank"
-				class="first"
-			>
-				<span>
-					Github
-				</span>
-			</a>
-			<a href="/contact.html" rel="noopener" class="second">
-				<span>
-					Contact
-				</span>
-			</a>
-			<a>
-				<span class="mode-toggle" tabindex="0">
-					🌞
-				</span>
-			</a>
-		</header>
-		<div id="face"></div>
-		<main>
-			<section id="intro">
-				<p>
-					I’m Mark Sauer-Utley. I'm a full-stack developer from Brooklyn, NY,
-					specializing in Javascript.
-				</p>
-				<p>
-					I spend most of my days building custom UI's for major publisher websites
-					in the US, like <span class="color">CNBC</span class="color">, <span class="color">ESPN</span class="color">,
-					<span class="color">ABC News</span class="color">, <span class="color">USA Today</span class="color">, and
-					<span class="color">AP News</span class="color">.
-				</p>
-				<p>Want to work together or chat about a project?</p>
-			</section>
-			<section id="skills" tabindex="0">				
-				<div id="skills-animation"></div>
-				<div class="skills-grid">
-					<h2 class="reveal">
-						Skills &amp; Interests</h2>
-					<div class="reveal">
-						<div class="skills-subgrid">
-							<h3>FRONT END</h3>
-							<ul>
-								<li>typescript</li>
-								<li>javascript</li>
-								<li>css</li>
-								<li>html/xml</li>
-							</ul>
-							<ul>
-								<li>gatsby</li>
-								<li>next.js</li>
-								<li>react</li>
-							</ul>
-							<ul>
-								<li>styled-components</li>
-								<li>apollo client</li>
-							</ul>
-						</div>
-					</div>
-					<div class="reveal">
-						<div class="skills-subgrid">
-							<h3>BACK END</h3>
-							<ul>
-								<li>express</li>
-								<li>ruby on rails</li>
-								<li>apollo server</li>
-							</ul>
-							<ul>
-								<li>graphql</li>
-								<li>mongo db</li>
-								<li>mysql</li>
-							</ul>
-							<ul>
-								<li>heroku</li>
-								<li>now.sh</li>
-							</ul>
-						</div>
+		}
+	</style>
+	<style id="dark">
+		@media (prefers-color-scheme: dark) {
+			body {
+				background-color: #292929;
+				color: white;
+			}
+
+			header a,
+			footer a,
+			section#work div.project {
+				color: white;
+			}
+
+			path {
+				fill: rgb(255, 255, 255);
+				stroke: rgb(255, 255, 255);
+			}
+
+			div.project-details reveal {
+				color: #231f1f;
+			}
+		}
+	</style>
+	<script type="text/javascript">
+		(function () {
+			const darkModeCookie = document.cookie === "dark=true";
+
+			if (darkModeCookie) {
+				document.querySelector("style#dark").innerHTML += `
+						body {
+							background-color: #292929;
+							color: white;
+						}
+						header a, footer a, section#work div.project {
+							color: white;
+						}
+						path {
+							fill: rgb(255, 255, 255);
+							stroke: rgb(255, 255, 255);
+						} 
+						div.project-details reveal {
+							color: #231f1f;
+						}
+					`;
+
+				window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚");
+				return;
+			}
+
+			if (window.matchMedia("(prefers-color-scheme: dark)").matches && !darkModeCookie) {
+				window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚");
+				return;
+			}
+
+			window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌞");
+		})();
+	</script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="keywords"
+		content="Mark Sauer-Utley, Web Developer, javascript, react, node.js, next.js, express, mongoDB, mysql, styled-components, software engineer, front-end development, back-end development, ruby, ruby on rails, postgresql, heroku, git" />
+	<meta name="description" content="Portfolio for Brooklyn-based full-stack javascript developer Mark Sauer-Utley." />
+	<title>mark sauer-utley</title>
+</head>
+
+<body>
+	<header>
+		<a href="https://www.github.com/mrkutly" rel="noopener" target="_blank" class="first">
+			<span>
+				Github
+			</span>
+		</a>
+		<a href="/contact.html" rel="noopener" class="second">
+			<span>
+				Contact
+			</span>
+		</a>
+		<a>
+			<span class="mode-toggle" tabindex="0">
+			</span>
+		</a>
+	</header>
+	<div id="face"></div>
+	<main>
+		<section id="intro">
+			<p>
+				I’m Mark Sauer-Utley. I'm a full-stack developer from Brooklyn, NY,
+				specializing in Javascript.
+			</p>
+			<p>
+				I spend most of my days building internal tools for my team at Taboola or custom UI's for major publisher
+				websites
+				in the US, like <span class="color">CNBC</span class="color">, <span class="color">ESPN</span class="color">,
+				<span class="color">ABC News</span class="color">, <span class="color">USA Today</span class="color">, and
+				<span class="color">AP News</span class="color">.
+			</p>
+			<p>Want to work together or chat about a project?</p>
+		</section>
+		<section id="skills" tabindex="0">
+			<div id="skills-animation"></div>
+			<div class="skills-grid">
+				<h2 class="reveal">
+					Skills &amp; Interests</h2>
+				<div class="reveal">
+					<div class="skills-subgrid">
+						<h3>FRONT END</h3>
+						<ul>
+							<li>typescript</li>
+							<li>javascript</li>
+							<li>css</li>
+							<li>html/xml</li>
+						</ul>
+						<ul>
+							<li>gatsby</li>
+							<li>next.js</li>
+							<li>react</li>
+						</ul>
+						<ul>
+							<li>styled-components</li>
+							<li>apollo client</li>
+						</ul>
 					</div>
 				</div>
-			</section>
-			<section id="work" tabindex="0">
-				<div id="work-animation"></div>
-				<div class="work-grid">
-					<div class="project-container">
-						<a href="https://github.com/mrkutly/taboola-ihp-dashboard">
-							<div class="project reveal">
-								<span class="date">10.2019</span>
-								<span class="title">Taboola Implementation Health Dashboard</span>
-							</div>
-						</a>
-						<div class="project-details reveal">
-							<p>
-								An analytics tool for Taboola's Professional Services Department. The Implementation Health Dashboard allows the Professional Services Department to assess the amount of unused code that is being sent to our top publishers's websites. Built with Typescript, React, Next.js and deployed with Docker.
-							</p>
-						</div>
+				<div class="reveal">
+					<div class="skills-subgrid">
+						<h3>BACK END</h3>
+						<ul>
+							<li>express</li>
+							<li>ruby on rails</li>
+							<li>apollo server</li>
+						</ul>
+						<ul>
+							<li>graphql</li>
+							<li>mongo db</li>
+							<li>mysql</li>
+						</ul>
+						<ul>
+							<li>heroku</li>
+							<li>now.sh</li>
+						</ul>
 					</div>
-					<div class="project-container">
-						<a href="https://github.com/mrkutly/pubcrawl">
-							<div class="project reveal">
-								<span class="date">10.2019</span>
-								<span class="title">PubCrawler</span>
-							</div>
-						</a>
-						<div class="project-details reveal">
-							<p>
-								A data visualization tool for Taboola's Professional Services Department. PubCrawler allows employees to quickly gain insights into how our web crawler is ingesting content by pooling data from multiple databases and putting it into an easy-to-use interface. Built with React, Apollo Client, Apollo Server, GraphQL, and MySQL. Deployed with Docker.
-							</p>
-						</div>
-					</div>
-					<div class="project-container">
-						<a href="https://www.cnbc.com/2019/07/12/flexjobs-15-of-the-most-common-flexible-side-jobs.html#taboolaContainerMix">
-							<div class="project reveal">
-								<span class="date">04.2019</span>
-								<span class="title">CNBC</span>
-							</div>
-						</a>
-						<div class="project-details reveal">
-							<p>
-								A custom feed of Taboola ads and CNBC Make It content. Built with vanilla JS for CSS for UI, and XML for a custom
-								recommendation algorithm ranker.
-								<br />
-								<span class="ad-message">Please turn off your ad-blocker to see it 😊</span>
-							</p>
-						</div>
-					</div>
-					<div class="project-container">
-						<a href="https://mantra-percussion.herokuapp.com">
-							<div class="project reveal">
-								<span class="date">02.2019</span>
-								<span class="title">Mantra Percussion</span>
-							</div>
-						</a>
-						<div class="project-details reveal">
-							<p>
-								Website for the NYC-based percussion band Mantra Percussion. Built with Gatsby and styled-components. Hosted on
-								Heroku.
-							</p>
-						</div>
-					</div>	
-					<div class="project-container">
-						<a href="https://www.syfy.com/syfywire/chosen-one-of-the-day-gamera-master-of-the-uneven-bars#taboola-below-article-thumbnails">
-							<div class="project reveal">
-								<span class="date">02.2019</span>
-								<span class="title">SYFY</span>
-							</div>
-						</a>
-						<div class="project-details reveal">
-							<p>
-								A custom feed of Taboola ads and SYFY Wire content. Built with vanilla JS and CSS for UI, and X-Path
-								configurations for
-								a custom web-crawler.
-								<br />
-								<span class="ad-message"> Please turn off your ad-blocker to see it 😊</span>
-							</p>
-						</div>
-					</div>
-					<div class="project-container">
-						<a href="https://github.com/taboola/taboola-react-native-example/tree/master/full-example/TaboolaReactNativeExample">
-							<div class="project reveal">
-								<span class="date">03.2019</span>
-								<span class="title">Taboola React Native</span>
-							</div>
-						</a>
-						<div class="project-details reveal">
-							<p>
-								An example application to show Taboola clients best practice integrations of the Taboola React Native node
-								package.
-								Built with React Native and styled-components.
-							</p>
-						</div>
-					</div>	
 				</div>
-			</section>
-		</main>
-		<footer>
-			<a href="https://www.github.com/mrkutly">
-				<span>
-					Github
-				</span>
-			</a>
-			<a href="https://www.linkedin.com/in/mark-sauer-utley/">
-				<span>
-					LinkedIn
-				</span>
-			</a>
-			<a href="https://medium.com/@mark.utley.713">
-				<span>
-					Medium
-				</span>
-			</a>
-			<a href="https://twitter.com/sour_utley">
-				<span>
-					Twitter
-				</span>
-			</a>
-			<a href="/contact.html" rel="noopener">
-				<span>
-					Contact
-				</span>
-			</a>
-		</footer>
-	</body>
+			</div>
+		</section>
+		<section id="work" tabindex="0">
+			<div id="work-animation"></div>
+			<div class="work-grid">
+				<div class="project-container">
+					<a href="https://github.com/mrkutly/taboola-ihp-dashboard">
+						<div class="project reveal">
+							<span class="date">10.2019</span>
+							<span class="title">Taboola Implementation Health Dashboard</span>
+						</div>
+					</a>
+					<div class="project-details reveal">
+						<p>
+							An analytics tool for Taboola's Professional Services Department. The Implementation Health Dashboard
+							allows the Professional Services Department to assess the amount of unused code that is being sent to our
+							top publishers's websites. Built with Typescript, React, Next.js and deployed with Docker.
+						</p>
+					</div>
+				</div>
+				<div class="project-container">
+					<a href="https://github.com/mrkutly/pubcrawl">
+						<div class="project reveal">
+							<span class="date">10.2019</span>
+							<span class="title">PubCrawler</span>
+						</div>
+					</a>
+					<div class="project-details reveal">
+						<p>
+							A data visualization tool for Taboola's Professional Services Department. PubCrawler allows employees to
+							quickly gain insights into how our web crawler is ingesting content by pooling data from multiple
+							databases and putting it into an easy-to-use interface. Built with React, Apollo Client, Apollo Server,
+							GraphQL, and MySQL. Deployed with Docker.
+						</p>
+					</div>
+				</div>
+				<div class="project-container">
+					<a
+						href="https://www.cnbc.com/2019/07/12/flexjobs-15-of-the-most-common-flexible-side-jobs.html#taboolaContainerMix">
+						<div class="project reveal">
+							<span class="date">04.2019</span>
+							<span class="title">CNBC</span>
+						</div>
+					</a>
+					<div class="project-details reveal">
+						<p>
+							A custom feed of Taboola ads and CNBC Make It content. Built with vanilla JS for CSS for UI, and XML for a
+							custom
+							recommendation algorithm ranker.
+							<br />
+							<span class="ad-message">Please turn off your ad-blocker to see it 😊</span>
+						</p>
+					</div>
+				</div>
+				<div class="project-container">
+					<a href="https://mantra-percussion.herokuapp.com">
+						<div class="project reveal">
+							<span class="date">02.2019</span>
+							<span class="title">Mantra Percussion</span>
+						</div>
+					</a>
+					<div class="project-details reveal">
+						<p>
+							Website for the NYC-based percussion band Mantra Percussion. Built with Gatsby and styled-components.
+							Hosted on
+							Heroku.
+						</p>
+					</div>
+				</div>
+				<div class="project-container">
+					<a
+						href="https://www.syfy.com/syfywire/chosen-one-of-the-day-gamera-master-of-the-uneven-bars#taboola-below-article-thumbnails">
+						<div class="project reveal">
+							<span class="date">02.2019</span>
+							<span class="title">SYFY</span>
+						</div>
+					</a>
+					<div class="project-details reveal">
+						<p>
+							A custom feed of Taboola ads and SYFY Wire content. Built with vanilla JS and CSS for UI, and X-Path
+							configurations for
+							a custom web-crawler.
+							<br />
+							<span class="ad-message"> Please turn off your ad-blocker to see it 😊</span>
+						</p>
+					</div>
+				</div>
+				<div class="project-container">
+					<a
+						href="https://github.com/taboola/taboola-react-native-example/tree/master/full-example/TaboolaReactNativeExample">
+						<div class="project reveal">
+							<span class="date">03.2019</span>
+							<span class="title">Taboola React Native</span>
+						</div>
+					</a>
+					<div class="project-details reveal">
+						<p>
+							An example application to show Taboola clients best practice integrations of the Taboola React Native node
+							package.
+							Built with React Native and styled-components.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<a href="https://www.github.com/mrkutly">
+			<span>
+				Github
+			</span>
+		</a>
+		<a href="https://www.linkedin.com/in/mark-sauer-utley/">
+			<span>
+				LinkedIn
+			</span>
+		</a>
+		<a href="https://medium.com/@mark.utley.713">
+			<span>
+				Medium
+			</span>
+		</a>
+		<a href="https://blog.marksauerutley.com">
+			<span>
+				Personal Blog
+			</span>
+		</a>
+		<a href="/contact.html" rel="noopener">
+			<span>
+				Contact
+			</span>
+		</a>
+	</footer>
+</body>
+<script src="/js/index.js"></script>
+<script src="/js/logMessage.js"></script>
+
 </html>

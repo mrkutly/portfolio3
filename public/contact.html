@@ -1,74 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" type="text/css" href="index.css" />
-		<link rel="icon" href="/static/favicon.png" />
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.8/lottie.min.js"
-			integrity="sha256-QWuFU4W0oiKnJa3GVz5Z+pNf91eTYdmHogcIeJpWON0="
-			crossorigin="anonymous"
-		></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-		<script src="js/contact.js"></script>
-		<script src="/js/logMessage.js"></script>
-		<style id="dark"></style>
-		<script type="text/javascript">
-			if (document.cookie === "dark=true") {
-				document.querySelector("style#dark").innerHTML = `
-					body {
-						background-color: #292929;
-						color: white;
-					}
-					header a {
-						color: white;
-					}
-					path {
-						fill: rgb(255, 255, 255);
-						stroke: rgb(255, 255, 255);
-					} 
-				`
 
-				window.addEventListener(
-					"DOMContentLoaded",
-					() => (document.querySelector(".mode-toggle").textContent = "🌚")
-				)
+<head>
+	<link rel="stylesheet" type="text/css" href="index.css" />
+	<link rel="icon" href="/static/favicon.png" />
+	<style>
+		@media (prefers-reduced-motion: reduce) {
+			.reveal {
+				opacity: 1;
+				transform: translateY(0px) skewX(0deg);
 			}
-		</script>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>mark sauer-utley | contact</title>
-	</head>
-	<body>
-		<header>
-			<a href="/" rel="noopener" class="second">
-				<span>
-					Back
-				</span>
-			</a>
-			<a>
-				<span class="mode-toggle" tabindex="0">
-					🌞
-				</span>
-			</a>
-		</header>
-		<a href="/" rel="noopener">
-			<div id="face"></div>
-		</a>
-		<main class="contact">
-			<div>
-				<p id="email" tabIndex="0" data-clipboard-target="#email">
-					mark.sauer.utley@gmail.com
-				</p>
+		}
+	</style>
+	<style id="dark">
+		@media (prefers-color-scheme: dark) {
+			body {
+				background-color: #292929;
+				color: white;
+			}
 
-				<div class="contact-message">
-					<p>
-						i know we all hate these "mailto" links that open the mail app.
-					</p>
-					<p>just click my email to copy it to your clipboard.</p>
-				</div>
+			header a,
+			footer a,
+			section#work div.project {
+				color: white;
+			}
+
+			path {
+				fill: rgb(255, 255, 255);
+				stroke: rgb(255, 255, 255);
+			}
+
+			div.project-details reveal {
+				color: #231f1f;
+			}
+		}
+	</style>
+	<script type="text/javascript">
+		(function () {
+			const darkModeCookie = document.cookie === "dark=true";
+
+			if (darkModeCookie) {
+				document.querySelector("style#dark").innerHTML += `
+						body {
+							background-color: #292929;
+							color: white;
+						}
+						header a, footer a, section#work div.project {
+							color: white;
+						}
+						path {
+							fill: rgb(255, 255, 255);
+							stroke: rgb(255, 255, 255);
+						} 
+						div.project-details reveal {
+							color: #231f1f;
+						}
+					`;
+
+				window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚");
+				return;
+			}
+
+			if (window.matchMedia("(prefers-color-scheme: dark)").matches && !darkModeCookie) {
+				window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚");
+				return;
+			}
+
+			window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌞");
+		})();
+	</script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>mark sauer-utley | contact</title>
+</head>
+
+<body>
+	<header>
+		<a href="/" rel="noopener" class="second">
+			<span>
+				Back
+			</span>
+		</a>
+		<a>
+			<span class="mode-toggle" tabindex="0">
+			</span>
+		</a>
+	</header>
+	<a href="/" rel="noopener">
+		<div id="face"></div>
+	</a>
+	<main class="contact">
+		<div>
+			<p id="email" tabIndex="0" data-clipboard-target="#email">
+				mark.sauer.utley@gmail.com
+			</p>
+
+			<div class="contact-message">
+				<p>
+					i know we all hate these "mailto" links that open the mail app.
+				</p>
+				<p>just click my email to copy it to your clipboard.</p>
 			</div>
-		</main>
-		<footer></footer>
-	</body>
+		</div>
+	</main>
+	<footer></footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+<script src="js/contact.js"></script>
+<script src="/js/logMessage.js"></script>
+
 </html>
