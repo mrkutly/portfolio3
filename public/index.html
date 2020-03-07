@@ -4,15 +4,14 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="index.css" />
 	<link rel="icon" href="/static/favicon.png" />
-	<style>
+	<style id="dark">
 		@media (prefers-reduced-motion: reduce) {
 			.reveal {
 				opacity: 1;
 				transform: translateY(0px) skewX(0deg);
 			}
 		}
-	</style>
-	<style id="dark">
+
 		@media (prefers-color-scheme: dark) {
 			body {
 				background-color: #292929;
@@ -37,31 +36,50 @@
 	</style>
 	<script type="text/javascript">
 		(function () {
-			const darkModeCookie = document.cookie === "dark=true";
+			const cookie = document.cookie;
 
-			if (darkModeCookie) {
-				document.querySelector("style#dark").innerHTML += `
-						body {
-							background-color: #292929;
-							color: white;
-						}
-						header a, footer a, section#work div.project {
-							color: white;
-						}
-						path {
-							fill: rgb(255, 255, 255);
-							stroke: rgb(255, 255, 255);
-						} 
-						div.project-details reveal {
-							color: #231f1f;
+			if (cookie) {
+				const lightModeCookie = document.cookie === "dark=false";
+				const darkModeCookie = document.cookie === "dark=true";
+
+				if (lightModeCookie) {
+					document.querySelector("style#dark").innerHTML = `
+						@media (prefers-reduced-motion: reduce) {
+							.reveal {
+								opacity: 1;
+								transform: translateY(0px) skewX(0deg);
+							}
 						}
 					`;
+					window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌞");
+					return;
+				}
 
-				window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚");
-				return;
+				if (darkModeCookie) {
+					document.querySelector("style#dark").innerHTML += `
+							body {
+								background-color: #292929;
+								color: white;
+							}
+							header a, footer a, section#work div.project {
+								color: white;
+							}
+							path {
+								fill: rgb(255, 255, 255);
+								stroke: rgb(255, 255, 255);
+							} 
+							div.project-details reveal {
+								color: #231f1f;
+							}
+						`;
+
+					window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚");
+					return;
+				}
+
 			}
 
-			if (window.matchMedia("(prefers-color-scheme: dark)").matches && !darkModeCookie) {
+			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
 				window.addEventListener("DOMContentLoaded", () => document.querySelector(".mode-toggle").textContent = "🌚");
 				return;
 			}
@@ -72,8 +90,6 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<meta name="keywords"
-		content="Mark Sauer-Utley, Web Developer, javascript, react, node.js, next.js, express, mongoDB, mysql, styled-components, software engineer, front-end development, back-end development, ruby, ruby on rails, postgresql, heroku, git" />
 	<meta name="description" content="Portfolio for Brooklyn-based full-stack javascript developer Mark Sauer-Utley." />
 	<title>mark sauer-utley</title>
 </head>

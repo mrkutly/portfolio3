@@ -4,7 +4,9 @@
 	"description": "",
 	"main": "public/index.js",
 	"scripts": {
-		"start": "parcel public/index.html"
+		"dev": "parcel watch public/index.html public/contact.html",
+		"start": "parcel public/index.html",
+		"build": "parcel build public/index.html public/contact.html"
 	},
 	"author": "",
 	"license": "ISC",
