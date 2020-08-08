@@ -1,20 +1,20 @@
 {
-	"name": "portfolio3",
-	"version": "1.0.0",
-	"description": "",
-	"main": "public/index.js",
-	"scripts": {
-		"dev": "parcel watch public/index.html public/contact.html",
-		"start": "parcel public/index.html",
-		"build": "parcel build public/index.html public/contact.html"
-	},
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"nodemon": "^1.19.2",
-		"parcel": "^1.12.4"
-	},
-	"dependencies": {
-		"lottie-web": "^5.6.6"
-	}
+  "name": "portfolio3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/index.js",
+  "scripts": {
+    "dev": "parcel watch public/index.html public/contact.html",
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html public/contact.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.2",
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "lottie-web": "^5.6.6"
+  }
 }

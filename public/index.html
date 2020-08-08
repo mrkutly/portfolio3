@@ -4,6 +4,9 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="index.css" />
 	<link rel="icon" href="/static/favicon.png" />
+	<link rel="prefetch" href="https://mantra-percussion.netlify.com"/>
+	<link rel="prefetch" href="/contact.html"/>
+	<link rel="prefetch" href="https://blog.marksauerutley.com"/>
 	<style id="dark">
 		@media (prefers-reduced-motion: reduce) {
 			.reveal {
@@ -156,18 +159,19 @@
 					<div class="skills-subgrid">
 						<h3>BACK END</h3>
 						<ul>
-							<li>express</li>
-							<li>ruby on rails</li>
+							<li>express.js</li>
+							<li>elixir/phoenix</li>
+							<li>absinthe</li>
 							<li>apollo server</li>
 						</ul>
 						<ul>
-							<li>graphql</li>
 							<li>mongo db</li>
 							<li>mysql</li>
+							<li>postgresql</li>
 						</ul>
 						<ul>
+							<li>graphql</li>
 							<li>heroku</li>
-							<li>now.sh</li>
 						</ul>
 					</div>
 				</div>
@@ -176,6 +180,24 @@
 		<section id="work" tabindex="0">
 			<div id="work-animation"></div>
 			<div class="work-grid">
+				<div class="project-container">
+					<a href="https://github.com/mrkutly/taboola-ihp-dashboard">
+						<div class="project reveal">
+							<span class="date">07.2020</span>
+							<span class="title">Taboola Client Properties UI</span>
+						</div>
+					</a>
+					<div class="project-details reveal">
+						<p>
+							An in-browser IDE for updating, staging, and deploying code changes to publishers' websites. Saves ~350 hours/month for the
+							Professional Services engineers by simplifying and automating our deployment processes. Built with React,
+							Redux/Thunk,
+							and CodeMirror for the front end. I also built a backend service with Express that is used to provide in-editor
+							linting hints
+							of CSS and JS. All services are deployed with Docker and Kubernetes.
+						</p>
+					</div>
+				</div>
 				<div class="project-container">
 					<a href="https://github.com/mrkutly/taboola-ihp-dashboard">
 						<div class="project reveal">
@@ -208,20 +230,16 @@
 					</div>
 				</div>
 				<div class="project-container">
-					<a
-						href="https://www.cnbc.com/2019/07/12/flexjobs-15-of-the-most-common-flexible-side-jobs.html#taboolaContainerMix">
+					<a href="https://www.dungeonfriend.com">
 						<div class="project reveal">
-							<span class="date">04.2019</span>
-							<span class="title">CNBC</span>
+							<span class="date">03.2020</span>
+							<span class="title">Dungeon Friend</span>
 						</div>
 					</a>
 					<div class="project-details reveal">
 						<p>
-							A custom feed of Taboola ads and CNBC Make It content. Built with vanilla JS for CSS for UI, and XML for a
-							custom
-							recommendation algorithm ranker.
-							<br />
-							<span class="ad-message">Please turn off your ad-blocker to see it 😊</span>
+							Dungeons and Dragons character sheet manager. Built with React, Next.js, Redux/Thunk, Styled-Components, Express, and MongoDB.
+							Use email <strong>test@test.com</strong> and password <strong>TestAccount123!</strong> to access preview account.
 						</p>
 					</div>
 				</div>
@@ -237,24 +255,6 @@
 							Website for the NYC-based percussion band Mantra Percussion. Built with Gatsby and styled-components.
 							Hosted on
 							Heroku.
-						</p>
-					</div>
-				</div>
-				<div class="project-container">
-					<a
-						href="https://www.syfy.com/syfywire/chosen-one-of-the-day-gamera-master-of-the-uneven-bars#taboola-below-article-thumbnails">
-						<div class="project reveal">
-							<span class="date">02.2019</span>
-							<span class="title">SYFY</span>
-						</div>
-					</a>
-					<div class="project-details reveal">
-						<p>
-							A custom feed of Taboola ads and SYFY Wire content. Built with vanilla JS and CSS for UI, and X-Path
-							configurations for
-							a custom web-crawler.
-							<br />
-							<span class="ad-message"> Please turn off your ad-blocker to see it 😊</span>
 						</p>
 					</div>
 				</div>
