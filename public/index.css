@@ -6,7 +6,8 @@
 	src: local("Noto Sans Japanese Thin"), local("NotoSansJapanese-Thin"),
 		url("/static/fonts/noto-sans-jp-v23-latin-100.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-100.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url("/static/fonts/noto-sans-jp-v23-latin-100.woff") format("font-woff");
+	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -17,7 +18,8 @@
 	src: local("Noto Sans Japanese Light"), local("NotoSansJapanese-Light"),
 		url("/static/fonts/noto-sans-jp-v23-latin-300.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-300.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url("/static/fonts/noto-sans-jp-v23-latin-300.woff") format("font-woff");
+	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -28,8 +30,8 @@
 	src: local("Noto Sans Japanese Regular"), local("NotoSansJapanese-Regular"),
 		url("/static/fonts/noto-sans-jp-v23-latin-regular.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-regular.woff")
-			format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url("/static/fonts/noto-sans-jp-v23-latin-regular.woff") format("font-woff");
+	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -40,7 +42,8 @@
 	src: local("Noto Sans Japanese Medium"), local("NotoSansJapanese-Medium"),
 		url("/static/fonts/noto-sans-jp-v23-latin-500.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-500.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url("/static/fonts/noto-sans-jp-v23-latin-500.woff") format("font-woff");
+	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -51,7 +54,8 @@
 	src: local("Noto Sans Japanese Bold"), local("NotoSansJapanese-Bold"),
 		url("/static/fonts/noto-sans-jp-v23-latin-700.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-700.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url("/static/fonts/noto-sans-jp-v23-latin-700.woff") format("font-woff");
+	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @font-face {
@@ -62,7 +66,8 @@
 	src: local("Noto Sans Japanese Black"), local("NotoSansJapanese-Black"),
 		url("/static/fonts/noto-sans-jp-v23-latin-900.woff2") format("woff2"),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
-			url("/static/fonts/noto-sans-jp-v23-latin-900.woff") format("font-woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		url("/static/fonts/noto-sans-jp-v23-latin-900.woff") format("font-woff");
+	/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /** GLOBAL  */
@@ -107,6 +112,7 @@ header a.second {
 	grid-column-start: 3;
 	grid-column-end: 4;
 }
+
 header span.mode-toggle {
 	font-size: 2em;
 	grid-column-start: 4;
@@ -203,6 +209,7 @@ section#intro {
 section#intro p:nth-of-type(1) {
 	margin-top: 0;
 }
+
 section#intro p:nth-of-type(3) {
 	max-width: 656px;
 }
@@ -338,7 +345,7 @@ section#work div.project span.title:after {
 	display: block;
 	height: 21px;
 	max-width: 0;
-	transform: translateY(-10px);
+	transform: translateY(2px);
 	background-repeat: no-repeat;
 	transition: max-width ease-out 0.3s;
 }
@@ -349,7 +356,7 @@ section#work div.project span.title:hover:after {
 	display: block;
 	height: 21px;
 	max-width: 100%;
-	transform: translateY(-10px);
+	transform: translateY(2px);
 	background-repeat: no-repeat;
 }
 
@@ -413,6 +420,7 @@ footer a:focus {
 	html {
 		font-size: 90%;
 	}
+
 	body {
 		font-size: 8px;
 	}
@@ -559,6 +567,7 @@ footer a:focus {
 }
 
 @media (max-width: 480px) {
+
 	header a.first,
 	header a.second {
 		visibility: hidden;
@@ -584,6 +593,7 @@ footer a:focus {
 	section#skills div.skills-subgrid ul {
 		margin: 0;
 	}
+
 	section#skills div.skills-subgrid ul li {
 		margin: 5px 0;
 	}
@@ -609,7 +619,7 @@ footer a:focus {
 		color: #00e8ac;
 	}
 
-	main.contact + footer {
+	main.contact+footer {
 		display: none;
 	}
 

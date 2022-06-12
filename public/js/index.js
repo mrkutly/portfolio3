@@ -10,14 +10,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const skillsGrid = document.querySelector(".skills-grid");
   const workAnimation = document.getElementById("work-animation");
   const workGrid = document.querySelector(".work-grid");
-  const darkModeButton = document.querySelector(".mode-toggle");
   const revealElements = document.querySelectorAll(".reveal");
   const observableElements = [...revealElements, header, skillsGrid, workGrid];
-
-  let darkModeStyles = document.querySelector("style#dark");
-  let darkMode = document.cookie === "dark=true";
-
-  applyEventListener(darkModeButton, toggleDarkMode);
 
   const options = { threshold: 0 };
   const observer = new IntersectionObserver(
@@ -36,40 +30,6 @@ window.addEventListener("DOMContentLoaded", () => {
       autoplay: true
     };
     lottie.loadAnimation(animationOptions);
-  }
-
-  function toggleDarkMode() {
-    if (darkMode) {
-      darkMode = false;
-      document.cookie = "dark=false";
-      darkModeStyles.innerHTML = "";
-      darkModeButton.textContent = "🌞";
-    } else {
-      darkMode = true;
-      document.cookie = "dark=true";
-      darkModeStyles.innerHTML = `
-            body {
-               background-color: #292929;
-               color: white;
-            }
-            header a, footer a, section#work div.project {
-               color: white;
-            }
-            path {
-               fill: rgb(255, 255, 255);
-               stroke: rgb(255, 255, 255);
-				}
-				div.project-details {
-					color: #231f1f;
-				}
-			`;
-      darkModeButton.textContent = "🌚";
-    }
-  }
-
-  function applyEventListener(element, cb) {
-    element.addEventListener("click", cb);
-    element.addEventListener("keypress", e => e.which === 13 && cb(e));
   }
 
   function observerSwitch(entry) {
