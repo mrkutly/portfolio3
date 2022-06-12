@@ -200,7 +200,7 @@ main.contact p:focus {
 /** Intro  */
 
 section#intro {
-	margin: 0 10vw 70vh 30vw;
+	margin: 10vh 10vw 70vh 30vw;
 	max-width: 880px;
 	font-size: 2rem;
 	letter-spacing: 4px;
